@@ -10,10 +10,10 @@ public class UnionTypeTest {
     @Test
     public void base() {
         Union strOrInt = new Union(String.class, Integer.class, Null.class);
-        // error: don't declare type LinkedList
-//        strOrInt.set(new LinkedList<>());
-        // error: don't set the value
+        // error: don't init the value
 //        strOrInt.get(String.class);
+        // error: don't specify type LinkedList
+//        strOrInt.set(new LinkedList<>());
         // set strOrInt to Integer 32
         strOrInt.set(32);
         // reset strOrInt to Integer 132
