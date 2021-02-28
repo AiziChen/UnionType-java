@@ -9,7 +9,6 @@ public class Union {
 
     public Union(Class<?>... classes) {
         Collections.addAll(types, classes);
-
     }
 
     public void set(Object value) {
