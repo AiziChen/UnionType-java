@@ -26,11 +26,15 @@ you can see some details in the `Typed-Racket` Programming Language:
 ### I. basic test
 ```java
 Union strOrInt = new Union(String.class, Integer.class, Null.class);
-// set strOrInt to Integer 32
+/* error: don't init the value */
+// strOrInt.get(String.class);
+/* error: don't specify type LinkedList */
+// strOrInt.set(new LinkedList<>());
+/* set strOrInt to Integer 32 */
 strOrInt.set(32);
-// reset strOrInt to Integer 132
+/* reset strOrInt to Integer 132 */
 strOrInt.set(132);
-// error : strOrInt now is the Integer-type
+/* error : strOrInt now is the Integer-type */
 // strOrInt.set("hello");
 if (strOrInt.isType(Integer.class)) {
     System.out.println("number: " + strOrInt.get(Integer.class));
