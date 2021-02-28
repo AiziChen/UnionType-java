@@ -4,10 +4,15 @@ import org.junit.Test;
 import org.quanye.exttype.Null;
 import org.quanye.uniontype.Union;
 
+import java.util.LinkedList;
+
 public class UnionTypeTest {
     @Test
     public void base() {
         Union strOrInt = new Union(String.class, Integer.class, Null.class);
+        // error: don't declare type LinkedList
+//        strOrInt.set(new LinkedList<>());
+        // error: don't set the value
 //        strOrInt.get(String.class);
         // set strOrInt to Integer 32
         strOrInt.set(32);
