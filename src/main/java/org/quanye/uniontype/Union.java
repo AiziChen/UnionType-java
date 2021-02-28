@@ -20,7 +20,7 @@ public class Union {
                     return;
                 }
             }
-            throw new RuntimeException("UnionType: don't declare type: " + clazz.getName() + ".");
+            throw new RuntimeException("UnionType: don't specify type: " + clazz.getName() + ".");
         } else {
             throw new RuntimeException("UnionType: set different type.");
         }
