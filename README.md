@@ -35,7 +35,7 @@ strOrInt.set(132);
 /* reset strOrInt type to String type */
 // strOrInt.set("hello");
 /* error: don't specify type LinkedList */
-// strOrInt.set(new LinkedList<>());
+strOrInt.set(new LinkedList<>());
 if (strOrInt.isType(Integer.class)) {
     System.out.println("number: " + strOrInt.get(Integer.class));
 } else if (strOrInt.isType(String.class)) {
