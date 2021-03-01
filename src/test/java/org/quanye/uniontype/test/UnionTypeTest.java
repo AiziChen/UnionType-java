@@ -12,14 +12,14 @@ public class UnionTypeTest {
         Union strOrInt = new Union(String.class, Integer.class, Null.class);
         // error: don't init the value
 //        strOrInt.get(String.class);
-        // error: don't specify type LinkedList
-//        strOrInt.set(new LinkedList<>());
         // set strOrInt to Integer 32
         strOrInt.set(32);
         // reset strOrInt to Integer 132
         strOrInt.set(132);
-        // error : strOrInt now is the Integer-type
-//        strOrInt.set("hello");
+        // reset strOrInt type to String type
+        strOrInt.set("hello");
+        // error: don't specify type LinkedList
+//        strOrInt.set(new LinkedList<>());
         if (strOrInt.isType(Integer.class)) {
             System.out.println("number: " + strOrInt.get(Integer.class));
         } else if (strOrInt.isType(String.class)) {

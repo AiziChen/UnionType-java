@@ -13,16 +13,10 @@ public class Union {
 
     public void set(Object value) {
         Class<?> clazz = value.getClass();
-        if (this.value == null || isType(clazz)) {
-            for (Class<?> c : types) {
-                if (c.equals(clazz)) {
-                    this.value = value;
-                    return;
-                }
-            }
-            throw new RuntimeException("UnionType: don't specify type: " + clazz.getName() + ".");
+        if (types.contains(clazz)) {
+            this.value = value;
         } else {
-            throw new RuntimeException("UnionType: set different type.");
+            throw new RuntimeException("UnionType: don't specify type: " + clazz.getName() + ".");
         }
     }
 
