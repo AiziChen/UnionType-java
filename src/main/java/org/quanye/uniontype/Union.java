@@ -1,10 +1,11 @@
 package org.quanye.uniontype;
 
 import java.util.Collections;
-import java.util.LinkedList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Union {
-    private final LinkedList<Class<?>> types = new LinkedList<>();
+    private final Set<Class<?>> types = new HashSet<>();
     private Object value;
 
     public Union(Class<?>... classes) {
