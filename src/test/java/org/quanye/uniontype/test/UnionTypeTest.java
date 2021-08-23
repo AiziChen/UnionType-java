@@ -34,6 +34,8 @@ public class UnionTypeTest {
     public void nullValueTest() {
         Union nullableStr = new Union(String.class, Null.class);
         nullableStr.set(Null.instance);
+        // or
+//        Union nullableStr = new Union(Null.instance, String.class, Null.class);
         if (nullableStr.isType(Null.class)) {
             System.out.println("nullableStr is null");
         } else {

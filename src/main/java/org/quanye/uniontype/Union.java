@@ -12,6 +12,11 @@ public class Union {
         Collections.addAll(types, classes);
     }
 
+    public <T> Union(T val, Class<?>... classes) {
+        Collections.addAll(types, classes);
+        set(val);
+    }
+
     public void set(Object value) {
         Class<?> clazz = value.getClass();
         if (types.contains(clazz)) {
