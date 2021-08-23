@@ -10,7 +10,7 @@ public class UnionTypeTest {
     @Test
     public void base() {
         Union strOrInt = new Union(String.class, Integer.class, Null.class);
-        // error: don't init the value
+        // error: didn't init the value
 //        strOrInt.get(String.class);
         // set strOrInt to Integer 32
         strOrInt.set(32);
