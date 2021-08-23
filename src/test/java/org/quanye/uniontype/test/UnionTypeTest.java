@@ -2,9 +2,9 @@ package org.quanye.uniontype.test;
 
 import org.junit.Test;
 import org.quanye.exttype.Null;
+import org.quanye.uniontype.Option;
 import org.quanye.uniontype.Union;
-
-import java.util.LinkedList;
+import org.quanye.uniontype.test.record.Animal;
 
 public class UnionTypeTest {
     @Test
@@ -39,5 +39,14 @@ public class UnionTypeTest {
         } else {
             System.out.println("nullableStr: " + nullableStr);
         }
+    }
+
+    @Test
+    public void optionTypeTest() {
+        // Option type just an `Union(Null.class, T.class)` type
+        Option maybeAnimal = new Option(Null.instance, Animal.class);
+        System.out.println(maybeAnimal.get(Null.class));
+        maybeAnimal.set(new Animal("Little Yellow Bird", 2.32f));
+        System.out.println(maybeAnimal.get(Animal.class));
     }
 }
