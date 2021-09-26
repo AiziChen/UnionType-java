@@ -1,7 +1,7 @@
 # UnionType for The Java Programming Language
 
 ## 1. What is union type?
-you can see some details in the `Typed-Racket` Programming Language:
+you can see some details in the [`Typed-Racket`](https://docs.racket-lang.org/ts-guide/beginning.html#%28part._.Datatypes_and_.Unions%29) Programming Language:
 ```racket
 #lang typed/racket
 (define-type Tree (U leaf node))
@@ -21,9 +21,9 @@ you can see some details in the `Typed-Racket` Programming Language:
                  (tree-sum (node-right t)))]))
 ```
 ## 2. Use this library
-`note: you can see the test-details in test of this project`
+`note: you can see the tests in test of this project for more details.`
 
-### I. basic test
+### I. basic usage
 ```java
 Union strOrInt = new Union(String.class, Integer.class, Null.class);
 /* error: don't init the value */
@@ -46,11 +46,19 @@ if (strOrInt.isType(Integer.class)) {
 ```
 ### II. with the Null operation
 ```java
+/* 1. use `Union` class to manipulate nullable instance */
 Union nullableStr = new Union(String.class, Null.class);
 nullableStr.set(Null.instance);
 if (nullableStr.isType(Null.class)) {
     System.out.println("nullableStr is null");
 } else {
-    System.out.println("nullableStr: " + nullableStr);
+    System.out.println("nullableStr: " + nullableStr.get(String.class));
+}
+/* 2. or simplify use the `Option` class */
+Option canNullStr = new Option(String.class);
+if (canNullStr.isType(Null.class)) {
+    System.out.println("canNullStr is null");
+} else {
+    System.out.println("canNullStr: " + canNullStr.get(String.class));
 }
 ```
