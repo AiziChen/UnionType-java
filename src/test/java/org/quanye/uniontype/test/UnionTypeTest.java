@@ -39,7 +39,7 @@ public class UnionTypeTest {
         if (nullableStr.isType(Null.class)) {
             System.out.println("nullableStr is null");
         } else {
-            System.out.println("nullableStr: " + nullableStr);
+            System.out.println("nullableStr: " + nullableStr.get(String.class));
         }
     }
 
