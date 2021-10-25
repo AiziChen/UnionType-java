@@ -47,7 +47,7 @@ public class UnionTypeTest {
     public void optionTypeTest() {
         // Option type just an `Union(Null.class, T.class)` type
         Option maybeAnimal = new Option(Animal.class);
-        System.out.println(maybeAnimal.get(Null.class));
+        System.out.println(maybeAnimal.isNull());
         maybeAnimal.set(new Animal("Little Yellow Bird", 2.32f));
         System.out.println(maybeAnimal.get(Animal.class));
     }

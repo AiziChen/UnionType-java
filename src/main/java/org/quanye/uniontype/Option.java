@@ -7,4 +7,8 @@ public class Option extends Union {
         super(Null.class, clazz);
         set(Null.instance);
     }
+
+    public boolean isNull() {
+        return isType(Null.class);
+    }
 }
