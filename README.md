@@ -56,7 +56,7 @@ if (nullableStr.isType(Null.class)) {
 }
 /* 2. or simplify use the `Option` class */
 Option canNullStr = new Option(String.class);
-if (canNullStr.isType(Null.class)) {
+if (canNullStr.isNull()) {
     System.out.println("canNullStr is null");
 } else {
     System.out.println("canNullStr: " + canNullStr.get(String.class));
